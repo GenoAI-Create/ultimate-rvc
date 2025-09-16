@@ -88,7 +88,6 @@ def render(total_config: TotalConfig) -> None:
                 tab_config.autotune_strength.instance,
                 tab_config.clean_voice.instance,
                 tab_config.clean_strength.instance,
-                tab_config.remove_reverb.instance,
                 tab_config.embedder_model.instance,
                 tab_config.custom_embedder_model.instance,
                 tab_config.sid.instance,
