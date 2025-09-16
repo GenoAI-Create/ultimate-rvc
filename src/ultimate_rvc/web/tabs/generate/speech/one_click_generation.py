@@ -88,6 +88,7 @@ def render(total_config: TotalConfig) -> None:
                 tab_config.autotune_strength.instance,
                 tab_config.clean_voice.instance,
                 tab_config.clean_strength.instance,
+                tab_config.remove_reverb.instance,
                 tab_config.embedder_model.instance,
                 tab_config.custom_embedder_model.instance,
                 tab_config.sid.instance,
@@ -125,6 +126,8 @@ def render(total_config: TotalConfig) -> None:
                 tab_config.autotune_strength.value,
                 tab_config.clean_voice.value,
                 tab_config.clean_strength.value,
+                tab_config.clean_voice.instance,
+                tab_config.remove_reverb.value,
                 tab_config.embedder_model.value,
                 tab_config.sid.value,
                 tab_config.output_gain.value,
@@ -148,6 +151,7 @@ def render(total_config: TotalConfig) -> None:
                 tab_config.autotune_strength.instance,
                 tab_config.clean_voice.instance,
                 tab_config.clean_strength.instance,
+                tab_config.remove_reverb.instance,
                 tab_config.embedder_model.instance,
                 tab_config.sid.instance,
                 tab_config.output_gain.instance,
@@ -218,6 +222,8 @@ def _render_conversion_options(tab_config: OneClickSpeechGenerationConfig) -> No
             with gr.Column():
                 tab_config.clean_voice.instantiate()
                 tab_config.clean_strength.instantiate()
+            with gr.Column():
+                tab_config.remove_reverb.instantiate()
         tab_config.autotune_voice.instance.change(
             partial(toggle_visibility, targets={True}, update_default=False),
             inputs=tab_config.autotune_voice.instance,
