@@ -91,6 +91,7 @@ def render(total_config: TotalConfig, cookiefile: str | None = None) -> None:
                 tab_config.autotune_strength.instance,
                 tab_config.clean_voice.instance,
                 tab_config.clean_strength.instance,
+                tab_config.remove_reverb.instance,
                 tab_config.embedder_model.instance,
                 tab_config.custom_embedder_model.instance,
                 tab_config.sid.instance,
@@ -247,6 +248,8 @@ def _render_conversion_options(tab_config: OneClickSongGenerationConfig) -> None
                 with gr.Column():
                     tab_config.clean_voice.instantiate()
                     tab_config.clean_strength.instantiate()
+                with gr.Column():
+                    tab_config.remove_reverb.instantiate()
             tab_config.autotune_voice.instance.change(
                 partial(toggle_visibility, targets={True}),
                 inputs=tab_config.autotune_voice.instance,
