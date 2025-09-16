@@ -221,8 +221,6 @@ def _render_conversion_options(tab_config: OneClickSpeechGenerationConfig) -> No
             with gr.Column():
                 tab_config.clean_voice.instantiate()
                 tab_config.clean_strength.instantiate()
-            with gr.Column():
-                tab_config.remove_reverb.instantiate()
         tab_config.autotune_voice.instance.change(
             partial(toggle_visibility, targets={True}, update_default=False),
             inputs=tab_config.autotune_voice.instance,
