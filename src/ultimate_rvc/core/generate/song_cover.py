@@ -917,6 +917,7 @@ def run_pipeline(
     autotune_strength: float = 1.0,
     clean_vocals: bool = False,
     clean_strength: float = 0.7,
+    remove_reverb: bool = True,
     embedder_model: EmbedderModel = EmbedderModel.CONTENTVEC,
     custom_embedder_model: str | None = None,
     sid: int = 0,
@@ -1047,7 +1048,7 @@ def run_pipeline(
         song_dir,
         SeparationModel.REVERB_HQ_BY_FOXJOY,
         SegmentSize.SEG_256,
-    )
+    ) if remove_reverb else (main_vocals_track, main_vocals_track)
     display_progress("[~] Converting vocals...", 4 / 9, progress_bar)
     converted_vocals_track = convert(
         audio_track=vocals_dereverb_track,
