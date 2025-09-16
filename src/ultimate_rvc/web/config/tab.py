@@ -284,6 +284,16 @@ class SongGenerationConfig(GenerationConfig):
         value=False,
         exclude_value=True,
     )
+    remove_reverb: CheckboxConfig = CheckboxConfig(
+        label="De-reverb input audio",
+        info=(
+            "Whether to remove reverberation from the input audio"
+            " before proceeding voice conversion."
+            " Disable if result cover voice is unexpectedly breathy.<br><br>"
+        ),
+        value=True,
+        exclude_value=True,
+    )
     clean_strength: SliderConfig = SliderConfig.clean_strength(visible=False)
     room_size: SliderConfig = SliderConfig(
         label="Room size",

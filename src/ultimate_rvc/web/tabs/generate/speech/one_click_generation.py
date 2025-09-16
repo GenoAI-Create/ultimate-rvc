@@ -125,6 +125,7 @@ def render(total_config: TotalConfig) -> None:
                 tab_config.autotune_strength.value,
                 tab_config.clean_voice.value,
                 tab_config.clean_strength.value,
+                tab_config.clean_voice.instance,
                 tab_config.embedder_model.value,
                 tab_config.sid.value,
                 tab_config.output_gain.value,

@@ -187,6 +187,16 @@ def run_pipeline(
             ),
         ),
     ] = 0.7,
+    remove_reverb: Annotated[
+        bool,
+        typer.Option(
+            rich_help_panel=PanelName.VOCAL_ENRICHMENT_OPTIONS,
+            help=(
+                "Wheither removing reverberation from input audio."
+                " Disable if the resulting cover voice is unexpectedly breathy."
+            ),
+        ),
+    ] = True,
     embedder_model: Annotated[
         EmbedderModel,
         typer.Option(
@@ -348,6 +358,7 @@ def run_pipeline(
         autotune_strength=autotune_strength,
         clean_vocals=clean_vocals,
         clean_strength=clean_strength,
+        remove_reverb=remove_reverb,
         embedder_model=embedder_model,
         custom_embedder_model=custom_embedder_model,
         sid=sid,
