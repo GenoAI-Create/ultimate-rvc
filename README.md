@@ -1,3 +1,15 @@
+## An unofficial continuation of [Ultimate RVC](https://github.com/JackismyShephard/ultimate-rvc)
+This fork contains features that I've added basically for personal uses, but feel free to enjoy them.
+
+For now, this fork only includes the following add-ons:
+- Inference: Ability to avoid de-reverberation process before voice conversion (can be set from "Options" → "Vocal conversion" → "Vocal enrichment")
+
+Future ones would may be added.
+
+Huge credits to JackismyShephard and early collaborators behind the original repo!
+
+---
+
 # Ultimate RVC
 
 [![PyPI version](https://badge.fury.io/py/ultimate-rvc.svg)](https://badge.fury.io/py/ultimate-rvc)
